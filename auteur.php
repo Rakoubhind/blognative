@@ -45,7 +45,7 @@
         </nav> --> 
 
         <!-- main -->
-    <fieldset class="h-100 w-75"> 
+    <fieldset class="h-100 w-100> 
         <legend>Remplir ce formulaire :</legend>
     <form action="" method="post">
     <div class="form-group">
