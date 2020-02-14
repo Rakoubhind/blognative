@@ -69,7 +69,50 @@ label{
        font-weight:normal;
    }
    form{
-       width:900px;
+       width:600px;
        margin-left: 200px;
        background-color: white;
    }
+   .button {
+       width: 100%;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color:#FF6200;
+    background-color:white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: wheat;}
+  
+  .button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .button1 {
+ width: 500px;
+ padding: 15px 25px;
+ font-size: 24px;
+ cursor: pointer;
+ text-align: center;
+ text-decoration: none;
+ outline: none;
+ color:blue;
+ background-color:wheat;
+ border: none;
+ border-radius: 15px;
+
+}
+
+.button1:hover {background-color: wheat;}
+
+.button1:active {
+ box-shadow: 0 5px #666;
+ transform: translateY(4px);
+}

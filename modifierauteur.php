@@ -1,16 +1,11 @@
-  <?php require 'db.php'; ?>
+<?php require 'db.php'; ?>
     <?php include "nav.php" ;
     include 'sidebar.php'; ?>
 <?php
-$pdostat= $bdd->prepare('Select * FROM auteur ');
+$pdostat= $bdd->prepare('SELECT * FROM auteur where id_auteur=:num ');
+$pdostat->bindValue(':num',$_GET["numauteur"], PDO::PARAM_INT);
 $executeISOk =$pdostat->execute();
-$s=$pdostat->fetchAll();
-if(!empty($_POST)){
-    $req = $bdd->prepare("INSERT INTO auteur SET  fullname = ?, email = ?, avatar = ?");
-    $req->execute([$_POST['full-auteur'],$_POST['email-auteur'], $_POST['avatar-auteur']]);
-    header("location:form-auteur.php");
-    exit();
-}
+$auteur=$pdostat->fetch();
 ?>
 
     <fieldset class=" w-100"> 
