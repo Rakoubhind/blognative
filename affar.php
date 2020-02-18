@@ -1,7 +1,7 @@
 <?php require 'db.php'; ?>
 <?php
 $pdostat= $bdd->prepare("Select * FROM article  where id_categorie=:num");
-$pdostat->bindValue(':num', $_GET["id-cat"], PDO::PARAM_INT);
+$pdostat->bindValue(':num', $_GET["numcat"], PDO::PARAM_INT);
 $executeISOk =$pdostat->execute();
 $s=$pdostat->fetchAll();
 ?>

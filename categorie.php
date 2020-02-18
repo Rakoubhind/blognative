@@ -19,9 +19,9 @@ $s=$pdostat->fetchAll();
                         <img class="card-img-top" src= <?= $categorie['img_cat'] ?> alt="Card image" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title"> <?= $categorie['nom_cat'] ?></h4>
-                            <a href="#" class="btn " style="background-color:#FF6200;color:white; ">Modifier</a>
-                            <a href="#" class="btn " style="background-color:#FF6200;color:white; ">Supprimer</a>
-                            <a href="affar.php?id-cat=<?=$categorie['id-categorie']?>" class="btn " style="background-color:#FF6200;color:white; ">Afficher</a>
+                            <a href="modifiercategorie.php?numcat=<?=$categorie['id_categorie']?>" class="btn " style="background-color:#FF6200;color:white; ">Modifier</a>
+                            <a href="supcat.php?numcat=<?=$categorie['id_categorie']?>" class="btn " style="background-color:#FF6200;color:white; ">Supprimer</a>
+                            <a href="affar.php?numcat=<?=$categorie['id_categorie']?>" class="btn " style="background-color:#FF6200;color:white; ">Afficher</a>
                         </div>
                     </div>
                     <?php endforeach ;?>
