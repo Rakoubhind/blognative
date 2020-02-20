@@ -15,8 +15,8 @@ $s=$pdostat->fetchAll();
                         <img class="card-img-top" src= <?= $article['image_article'] ?> alt="Card image" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title"> <?= $article['title'] ?></h4>
-                            <p class="card-text"> <?= $article['contenu'] ?></p>
-                            <a href="readmore.php?numarticle=<?=$article["id-article"]  ?>" class="btn " style="background-color:#FF6200;color:white; ">Read More...</a>
+                            <p class="card-text"> <?= substr( $article['contenu'],0,30) ?>....</p>
+                            <a href="readm.php?numar=<?=$article["id_article"]  ?>" class="btn " style="background-color:#FF6200;color:white; ">Read More...</a>
                         
                     </div>
                     </div>

@@ -1,12 +1,12 @@
 
 <?php require 'db.php'; ?>
+<?php include "nav.php" ;?>
 <?php
 $pdostat= $bdd->prepare('Select * FROM auteur ');
 $executeISOk =$pdostat->execute();
 $s=$pdostat->fetchAll();
 ?>
 
-<?php include "nav.php" ;?>
 <a href="auteur.php"><button class="button" style="font-size: 24px;margin-bottom:10px;" > Retour au Formulaire</button></a>
     <div class="container">
         <div class="table-wrapper">

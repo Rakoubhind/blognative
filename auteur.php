@@ -12,7 +12,6 @@ if(!empty($_POST)){
     exit();
 }
 ?>
-
     <fieldset class=" w-100"> 
         <legend>Remplir ce formulaire :</legend>
     <form action="" method="post">
