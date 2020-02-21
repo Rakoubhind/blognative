@@ -15,8 +15,9 @@ $s=$pdostat->fetchAll();
       
       <div class="row mb-5 ">
       <?php foreach ($s as $categorie) :?>
+       
                     <div class="card col-lg-4" style="height:450px;">
-                        <img class="card-img-top" src= <?= $categorie['img_cat'] ?> alt="Card image" style="height: 300px;">
+                        <img class="card-img-top" src='uploads\categorie\<?= $categorie['img_cat'] ?>' alt="Card image" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title"> <?= $categorie['nom_cat'] ?></h4>
                             <a href="modifiercategorie.php?numcat=<?=$categorie['id_categorie']?>" class="btn " style="background-color:#FF6200;color:white; ">Modifier</a>

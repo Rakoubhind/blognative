@@ -2,14 +2,20 @@
 <?php include 'nav.php';
 include 'sidebar.php'; ?>
 <?php
-
-
-
 $pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();
 $s = $pdostat->fetchAll();
 if (isset($_POST['titleart'])){
-    include 'upload.php';
+	    $fileName = $_FILES['imageart']['name'];
+        $fileTmpName = $_FILES['imageart']['tmp_name'];
+        $fileError = $_FILES['imageart']['error'];
+        if($fileError === 0){
+            $fileDestination = 'uploads/article/'.$fileName;
+            move_uploaded_file($fileTmpName, $fileDestination);
+        }else {
+            echo "There was an error";
+        }
+
     $req = $bdd->prepare("INSERT INTO article SET title =?, contenu =?,date_article = ?, id_auteur =?,id_categorie = ? ,image_article= ?");
     $req->execute([$_POST['titleart'], $_POST['contenuart'], $_POST['dateart'], $_POST['taskOption1'], $_POST['taskOption2'], $fileName]);
     header("location:article.php");
@@ -27,9 +33,6 @@ if (isset($_POST['titleart'])){
             <label for="dd"> <span> Contenu :<span class="required">*</span></span></label> <input type="text"  name="contenuart">
         </div>
         <br>
-        <!-- <div class="form-group">
-            <label for="dd"><span>Image :<span class="required">*</span></span></label> <input type="file"  name="imgarticle">
-        </div> -->
         <div class="form-group">
             <label for="dd"> <span> Image :<span class="required">*</span></span></label> <input name="imageart"  type="file"  >
         </div>
