@@ -1,25 +1,31 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:-50px; top:0px;}
+  50%  {background-color:yellow; left:200px; top:0px;}
+
+}
+</style>
+</head>
+<body>
     
-        <div class="col-sm-12">
-            <h3>User Comment Example</h3>
-        </div><!-- /col-sm-12 -->
-    <div class="row">
-        <div class="col-sm-5">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
-            </div>
-        </div>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
 
-        
+<div></div>
 
- </div>
+</body>
+</html>
+</html>

@@ -1,6 +1,5 @@
 <?php require 'db.php'; ?>
-<?php include 'nav.php';
-include 'sidebar.php'; ?>
+<?php include 'nav.php'; ?>
 <?php
 $pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();

@@ -6,14 +6,12 @@ $pdostat= $bdd->prepare('Select * FROM auteur ');
 $executeISOk =$pdostat->execute();
 $s=$pdostat->fetchAll();
 ?>
-
-<a href="auteur.php"><button class="button" style="font-size: 24px;margin-bottom:10px;" > Retour au Formulaire</button></a>
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2> <b>Users :</b></h2>
+                        <h2> <b style="color:#780F13;">Users :</b></h2>
 					</div>
                 </div>
             </div>
@@ -30,7 +28,7 @@ $s=$pdostat->fetchAll();
                 <?php foreach ($s as $auteur) :?>
                 <tbody>
                     <tr>
-                        <td> <?= $auteur['fullname'] ?></td>
+                        <td> <?= recuperation ($auteur['fullname'] )?></td>
                         <td><?= $auteur['email'] ?></td>
 						<td><?= $auteur['avatar'] ?></td>
                         <td>

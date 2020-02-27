@@ -2,13 +2,6 @@ body, html {
     font-family: Roboto,Helvetica Neue,Helvetica,Arial,\\\6587泉驛正黑,WenQuanYi Zen Hei,Hiragino Sans GB,\\\5137黑Pro,LiHei Pro,Heiti TC,\\\5FAE軟正黑體,Microsoft JhengHei UI,Microsoft JhengHei,sans-serif;
 }
 
- img{
-    width:200px;
-}
-
-a:hover{
-    background-color:wheat;
-}
 label{
     display:block;
    margin-bottom: 10px;
@@ -16,7 +9,7 @@ label{
     label > span{
        float: left;
        width: 100px;
-       color:  #FF6200;
+       color:  #C00417;
        font-weight: bold;
        font-size: 13px;
        text-shadow: 1px 1px 1px #fff;
@@ -29,40 +22,41 @@ label{
        border: 1px solid #FFD2D2;
        padding: 20px;
        background: white;
-       box-shadow: inset 0px 0px 15px  #FF6200;
-       -moz-box-shadow: inset 0px 0px 15px  #FF6200;
-       -webkit-box-shadow: inset 0px 0px 15px  #FF6200;
+       box-shadow: inset 0px 0px 15px  #780F13;
+       -moz-box-shadow: inset 0px 0px 15px  #780F13;
+       -webkit-box-shadow: inset 0px 0px 15px  #780F13;
        
    }
     fieldset legend{
-       color: #FF6200;
-       border-top: 1px solid  #FF6200;
-       border-left: 1px solid  #FF6200;
-       border-right: 1px solid  #FF6200;
+       color: #C00417;
+       border-top: 1px solid  #C00417;
+       border-left: 1px solid  #C00417;
+       border-right: 1px solid  #C00417;
        border-radius: 5px 5px 0px 0px;
        -webkit-border-radius: 5px 5px 0px 0px;
        -moz-border-radius: 5px 5px 0px 0px;
        background:white;
        padding: 0px 8px 3px 8px;
-       box-shadow: -0px -1px 2px  #FF6200;
-       -moz-box-shadow:-0px -1px 2px  #FF6200;
-       -webkit-box-shadow:-0px -1px 2px  #FF6200;
+       box-shadow: -0px -1px 2px  #C00417;
+       -moz-box-shadow:-0px -1px 2px  #C00417;
+       -webkit-box-shadow:-0px -1px 2px  #C00417;
        font-weight: normal;
        font-size: 30px;
    }
    .btn{
-   background:  #FF6200;
-       border: 1px solid  #FF6200;
+   background: #C00417;
+       border: 1px solid  #C00417;
        padding: 5px 15px 5px 5px;
        color: #FFCBE2;
-       box-shadow: inset -1px -1px 3px  #FF6200;
-       -moz-box-shadow: inset -1px -1px 3px  #FF6200;
-       -webkit-box-shadow: inset -1px -1px 3px  #FF6200;
+       box-shadow: inset -1px -1px 3px  #C00417;
+       -moz-box-shadow: inset -1px -1px 3px  #C00417;
+       -webkit-box-shadow: inset -1px -1px 3px  #C00417;
        border-radius: 3px;
        border-radius: 3px;
        -webkit-border-radius: 3px;
        -moz-border-radius: 3px;	
        font-weight: bold;
+       
    }
    .required{
        color:red;
@@ -82,7 +76,7 @@ label{
     text-align: center;
     text-decoration: none;
     outline: none;
-    color:#FF6200;
+    color:#C00417;
     background-color:white;
     border: none;
     border-radius: 15px;
@@ -116,3 +110,4 @@ label{
  box-shadow: 0 5px #666;
  transform: translateY(4px);
 }
+

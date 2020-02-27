@@ -1,6 +1,6 @@
 <?php require 'db.php'; ?>
     <?php include "nav.php" ;
-    include 'sidebar.php'; ?>
+?>
 <?php
 $pdostat= $bdd->prepare('SELECT * FROM categorie where id_categorie= :num ');
 $pdostat->bindValue(':num', $_GET['numcat'], PDO::PARAM_INT);

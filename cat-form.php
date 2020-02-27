@@ -1,6 +1,6 @@
 <?php require 'db.php'; ?>
 <?php include 'nav.php';
-include 'sidebar.php'; ?>
+?>
 <?php
 $pdostat = $bdd->prepare('Select * FROM categorie ');
 $executeISOk = $pdostat->execute();
@@ -15,9 +15,8 @@ if (isset($_POST['nom-cat'])) {
     } else {
         echo "There was an error";
     }
-
-    $req = $bdd->prepare("INSERT INTO categorie SET  nom_cat = ?, img_cat = ? ");
-    $req->execute([$_POST['nom-cat'], $fileName]);
+    $req = $bdd->prepare("INSERT INTO categorie SET  nom_cat = ?,img_cat = ? ");
+    $req->execute([$_POST["nom-cat"], $fileName]);
     header("location:categorie.php");
     exit();
 }
