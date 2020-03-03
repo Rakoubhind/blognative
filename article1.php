@@ -1,6 +1,6 @@
 <?php require 'db.php'; ?>
 <?php
-$pdostat = $bdd->prepare('Select * FROM categorie  ');
+$pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();
 $s = $pdostat->fetchAll();
 ?>
@@ -58,14 +58,9 @@ $s = $pdostat->fetchAll();
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pages
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin.php">Admin
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                        <a class="dropdown-item" href="elements.html">elements</a>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -97,31 +92,29 @@ $s = $pdostat->fetchAll();
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-6">
                     <div class="breadcrumb_tittle text-left">
-                        <h2>Category Page</h2>
+                        <h2>Articles Page</h2>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="breadcrumb_content text-right">
-                        <p>Home<span>/</span>Category Page</p>
+                        <p>Home<span>/</span>Articles Page</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section style="margin:0 0 0 200px;">
-    <h1 style="margin:50px 0 50px 0px;color:#780F13;"> Categories Fashion Clothes :</h1>
-    <div class="row mb-4 ">
-        <?php foreach ($s as $categorie) : ?>
-            <div class="card col-lg-4" style="height:550px;margin:50px;">
-                <img class="card-img-top" src='uploads\categorie\<?= $categorie['img_cat'] ?>' alt="Card image"  style="height: 420px;">
-                <div class="card-body">
-                    <h4 class="card-title"> <?= $categorie['nom_cat'] ?></h4>
-                    <a href="affar.php?numcat=<?= $categorie['id_categorie'] ?>" class="btn " style="background-color:#C00417;color:white; ">Afficher</a>
+    <section>
+        <div class="row mb-4">
+            <?php foreach ($s as $article) : ?>
+                <div class="card section1 col-lg-3" style="height:550px;margin:50px;">
+                    <img class="card-img-top" src="uploads\article\<?= $article['image_article'] ?>" alt="Card image" style="height: 420px;">
+                    <div class="card-body">
+                        <h4 class="card-title"> <?= $article['title'] ?></h4>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
 
-    </div>
+            <?php endforeach; ?>
+        </div>
     </section>
     <section class="social_connect_part">
         <div class="container-fluid">

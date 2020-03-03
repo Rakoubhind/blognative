@@ -66,32 +66,18 @@ $s = $pdostat->fetchAll();
                                     <a class="nav-link" href="index.php" style="color:#C00417;">Home</a>
                                 </li>
                                 <li class="nav-item">
-
-
-                                
-                                    <a class="nav-link" href="archive.php" style="color:#C00417;">Archive</a>
+                                    <a class="nav-link" href="category.php" style="color:#C00417;">Categories</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" style="color:#C00417;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Category
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="single-blog.php"></a>
-                                        <a class="dropdown-item" href="elements.php">elements</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="article1.php">Articles</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php" style="color:#C00417;">Contact</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" style="color:#C00417;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="single-blog.php">Single blog</a>
-                                        <a class="dropdown-item" href="elements.php">elements</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin.php" style="color:#C00417;">Admin</a>
                                 </li>
+                                
                             </ul>
                         </div>
                         <div class="header_social_icon d-none d-lg-block">
@@ -190,26 +176,6 @@ $s = $pdostat->fetchAll();
                             <h2>All said replenish years void kind say void </h2>
                         </a>
                         <p>Posted on April 15, 2019</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="sidebar_widget">
-                    <div class="single_sidebar_wiget">
-                        <div class="sidebar_tittle">
-                            <h3>Categories</h3>
-                        </div>
-                        <div class="single_catagory_item category">
-                            <ul class="list-unstyled">
-                                <li><a href="category.html">Culture</a> <span>(15)</span> </li>
-                                <li><a href="category.html">Creative Design</a> <span>(15)</span> </li>
-                                <li><a href="category.html">Illustration</a> <span>(15)</span> </li>
-                                <li><a href="category.html">Production</a> <span>(15)</span> </li>
-                                <li><a href="category.html">Mangement</a> <span>(15)</span> </li>
-                                <li><a href="category.html">Branding</a> <span>(15)</span> </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
