@@ -1,5 +1,5 @@
 <?php require 'db.php' ?>
-<?php include "nav.php" ;
+<?php include "admin.php" ;
  ?>
 <?php
 $pdostat= $bdd->prepare('UPDATE auteur set fullname=:fullname ,email=:email ,avatar=:avatar where id_auteur=:num LIMIT 1');
@@ -9,6 +9,7 @@ $pdostat->bindValue(':email',$_POST["email-auteur"], PDO::PARAM_STR);
 $pdostat->bindValue(':avatar',$_POST["avatar-auteur"], PDO::PARAM_STR);
 $executeISOk =$pdostat->execute();
 if($executeISOk){
- header("location:auteur.php");
+ header("location:form-auteur.php");
+}
 ?>
 <?php include 'footer.php' ?>

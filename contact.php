@@ -43,17 +43,17 @@
                                     <a class="nav-link" href="index.php">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="archive.php">Archive</a>
+                                    <a class="nav-link" href="category.php"> Categories</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.php"> Category</a>
+                                    <a class="nav-link" href="article1.php">Article</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="admin.php">Admin</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="header_social_icon d-none d-lg-block">

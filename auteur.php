@@ -1,5 +1,5 @@
   <?php require 'db.php'; ?>
-    <?php include "nav.php" ; ?>
+    <?php include "admin.php" ; ?>
 <?php
 $pdostat= $bdd->prepare('Select * FROM auteur ');
 $executeISOk =$pdostat->execute();

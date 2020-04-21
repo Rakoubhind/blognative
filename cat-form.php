@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php include 'nav.php';
+<?php include 'admin.php';
 ?>
 <?php
 $pdostat = $bdd->prepare('Select * FROM categorie ');
@@ -34,6 +34,9 @@ if (isset($_POST['nom-cat'])) {
         <br>
         <br>
         <a href="categorie.php"><input type="submit" class="btn" value="Inserer"></a>
+        
     </form>
+    <a href="categorie.php"><input type="submit" class="btn" value="Voir les Categories"></a>
 </fieldset>
+
 <?php include "footer.php"; ?>

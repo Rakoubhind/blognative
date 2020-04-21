@@ -1,6 +1,6 @@
 
 <?php require 'db.php'; ?>
-<?php include "nav.php" ;?>
+<?php include "admin.php" ;?>
 <?php
 $pdostat= $bdd->prepare('Select * FROM auteur ');
 $executeISOk =$pdostat->execute();
@@ -11,7 +11,7 @@ $s=$pdostat->fetchAll();
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2> <b style="color:#780F13;">Users :</b></h2>
+                        <h2> <b style="color:#780F13; margin:30px;">Users :</b></h2>
 					</div>
                 </div>
             </div>

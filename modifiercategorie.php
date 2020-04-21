@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-    <?php include "nav.php" ;
+    <?php include "admin.php" ;
 ?>
 <?php
 $pdostat= $bdd->prepare('SELECT * FROM categorie where id_categorie= :num ');
@@ -9,7 +9,7 @@ $categorie=$pdostat->fetch();
 ?>
     <fieldset class=" w-100"> 
         <legend>Modifier le formulaire :</legend>
-    <form action="modifiercat.php" method="post">
+    <form action="modifiercat.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
     <input type="hidden"  class="form-control1" name="numcat" value="<?= $categorie['id_categorie'];?>">
     </div>
@@ -22,7 +22,6 @@ $categorie=$pdostat->fetch();
     </div>
     <br>
     <br>
-   <input type="submit" class="btn" value="Enregistrer"></a>
+   <input type="submit" class="btn" value="Enregistrer" name="update">
     </form>
     </fieldset>
-    <?php include "footer.php" ; ?>

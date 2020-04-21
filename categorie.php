@@ -1,4 +1,6 @@
-<?php require 'db.php'; ?>
+<?php require 'db.php';
+include 'admin.php' ?>
+
 <?php
 $pdostat = $bdd->prepare('Select * FROM categorie  ');
 $executeISOk = $pdostat->execute();
@@ -31,7 +33,7 @@ $s = $pdostat->fetchAll();
 
 <body>
     <!--::header part start::-->
-    <header class="main_menu">
+    <!-- <header class="main_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -88,11 +90,11 @@ $s = $pdostat->fetchAll();
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <!-- Header part end-->
 
     <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg align-items-center">
+    <!-- <section class="breadcrumb breadcrumb_bg align-items-center">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-6">
@@ -107,26 +109,41 @@ $s = $pdostat->fetchAll();
                 </div>
             </div>
         </div>
-    </section>
-    <section>
-    <a href="cat-form.php"><button class="button1" style="font-size: 24px;margin:20px 0 0 00px;color:#C00417;"><i class="fa fa-plus"></i>Add new Categorie:</button></a>
-    <h1 style="margin:50px 0 50px 0px;color:#780F13;"> Categories Fashion Clothes :</h1>
-    <div class="row mb-5 ">
-        <?php foreach ($s as $categorie) : ?>
-            <div class="card col-lg-4" style="height:450px;">
-                <img class="card-img-top" src='uploads\categorie\<?= $categorie['img_cat'] ?>' alt="Card image" style="height: 300px;">
-                <div class="card-body">
-                    <h4 class="card-title"> <?= $categorie['nom_cat'] ?></h4>
-                    <a href="modifiercategorie.php?numcat=<?= $categorie['id_categorie'] ?>" class="btn " style="background-color:#C00417;color:white; ">Modifier</a>
-                    <a href="supcat.php?numcat=<?= $categorie['id_categorie'] ?>" class="btn " style="background-color:#C00417;color:white; ">Supprimer</a>
-                    <a href="affar.php?numcat=<?= $categorie['id_categorie'] ?>" class="btn " style="background-color:#C00417;color:white; ">Afficher</a>
-                </div>
-            </div>
-        <?php endforeach; ?>
-
-    </div>
-    </section>
-    <section class="social_connect_part">
+    </section> -->
+   <div class="container">
+        <div class="col-lg-12 p-5  bg-white rounded shadow-sm mb-5" >
+          <div class="table table-striped table-hover">
+              <table >
+                <thead>
+                  <tr>
+                      <th>Images </th>
+                      <th>Nom Categorie </th>
+                      <th >Actions </th>
+                     
+                  </tr>
+              </thead>
+             <tbody>
+                <?php foreach ($s as $categorie) : ?>
+                    <tr >
+                      <td><a href="#"><img src='uploads\categorie\<?= $categorie['img_cat'] ?>' alt="product img" style="width:250px; height:250px;"></a></td>
+                      <td ><a href="#" style="font-size:20px;" ><?= $categorie['nom_cat'] ?></a></td>
+                      <td>
+                      <a style="font-size:100px;"href="modifiercategorie.php?numcat=<?= $categorie['id_categorie'] ?>" ><i class="material-icons"style="color:#FF6200";>&#xE254;</i></a>
+                      <a href="supcat.php?numcat=<?= $categorie['id_categorie'] ?>"> <i class="material-icons" style="color:red;">&#xE872;</i> </a>
+                     
+                      </a>
+                    </td>
+                    
+                  </tr>
+                <?php endforeach; ?>
+             </tbody>
+            </table>
+             </div>
+        </div>
+     </div>
+     
+     </div>
+    <!-- <section class="social_connect_part">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-12">
@@ -183,9 +200,9 @@ $s = $pdostat->fetchAll();
             </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-	<footer class="footer-area">
+	<!-- <footer class="footer-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-3 col-lg-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
@@ -245,7 +262,7 @@ $s = $pdostat->fetchAll();
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer> -->
     <!-- footer part end-->
 
     <!-- jquery plugins here-->

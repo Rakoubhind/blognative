@@ -58,10 +58,10 @@ $s = $pdostat->fetchAll();
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="admin.php">Admin
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="header_social_icon d-none d-lg-block">

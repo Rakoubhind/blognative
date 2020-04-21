@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php include 'nav.php'; ?>
+<?php include 'admin.php'; ?>
 <?php
 $pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();
@@ -18,25 +18,38 @@ if (isset($_POST['titleart'])){
 }
 ?>
 <div class="container">
-<a href="form-article.php"><button class="button1" style="font-size: 24px;margin:20px 0 0 00px;color:#C00417;"><i class="fa fa-plus"></i>Add new Article:</button></a>
-    <h1 style="margin:50px 0 50px 0px;color:#780F13;"> Articles Fashion Clothes :</h1>
-    <div class="row mb-5 ">
-        <?php foreach ($s as $article) : ?>
-            <div class="card col-lg-4" style="height:450px;">
-               <img class="card-img-top" src='uploads\article\<?= $article['image_article']?>' alt="Card image" style="height: 300px;">
-               
-                <div class="card-body">
-                    <h4 class="card-title"> <?= $article['title'] ?></h4>
-                    <p class="card-text"> <?= substr($article['contenu'], 0, 20)  ?>.....</p>
+        <div class="col-lg-12 p-5  bg-white rounded shadow-sm mb-5" >
+          <div class="table table-striped table-hover">
+              <table >
+                <thead>
+                  <tr>
+                      <th>Images </th>
+                      <th>Nom Article </th>
+                      <th>Description </th>
+                      <th >Actions </th>
+                     
+                  </tr>
+              </thead>
+             <tbody>
+             <?php foreach ($s as $article) : ?>
+                    <tr >
+                   <td> <img class="card-img-top" src='uploads\article\<?= $article['image_article']?>' alt="Card image" style="width:250px; height:250px;"></td>
+                      <td ><a href="#" style="font-size:20px;" ><?= $article['title'] ?></a></td>
+                      <td> <a href="#" style="font-size:20px;" ><?= substr($article['contenu'], 0, 20)  ?>.....</a></td>
+                     <td>
+                      <a href="modifierarticle.php?numar=<?= $article['id_article'] ?>" ><i class="material-icons"style="color:#FF6200";>&#xE254;</i></a>
+                      <a href="suppar.php?numar=<?= $article['id_article'] ?>"> <i class="material-icons" style="color:red;">&#xE872;</i> </a>
+                        <a href="comment.php?numar=<?= $article['id_article'] ?>"><i class="fa fa-comments" style="font-size:30px;"></i></a>
                   
-                        <a href="modifierarticle.php?numar=<?= $article['id_article'] ?>" class="btn " style="background-color:#C00417;color:white;width:100px;display:inline-block; ">Modifier</a>
-                        <a href="suppar.php?numar=<?= $article['id_article'] ?>" class="btn " style="background-color:#C00417;color:white;display:inline-block; ">Supprimer</a>
-                        <a href="comment.php?numar=<?= $article['id_article'] ?>" class="btn " style="background-color:#C00417;color:white;display:inline-block;">Comm</a>
-                  
-                </div>
-            </div>
-        <?php endforeach; ?>
-
-    </div>
-z
-    <?php include "footer.php"; ?>
+                      </a>
+                    </td>
+                    
+                  </tr>
+                <?php endforeach; ?>
+             </tbody>
+            </table>
+             </div>
+        </div>
+     </div>
+     
+     </div>

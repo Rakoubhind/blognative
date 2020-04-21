@@ -74,9 +74,9 @@ $s = $pdostat->fetchAll();
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php" style="color:#C00417;">Contact</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="admin.php" style="color:#C00417;">Admin</a>
-                                </li>
+                                </li> -->
                                 
                             </ul>
                         </div>

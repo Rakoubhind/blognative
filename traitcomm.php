@@ -35,7 +35,7 @@
           <label for="dd"> <span> Contenu :<span class="required">*</span></span></label> <textarea name="contenucomm" id="" cols="30" rows="5"></textarea>
         </div>
         <br>
-        <a href=""></a><input type="submit" name ="inserer" class="btn" value="Inserer">
+        <a href=""></a><input type="submit" name ="inserer" class="btn"  style="background-color:#C00417;color:white; "value="Inserer">
       </form>
     </fieldset>                                   
   </div>

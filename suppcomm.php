@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-    <?php include "nav.php" ;?>
+    <?php include "admin.php" ;?>
 <?php
 $pdostat= $bdd->prepare('DELETE FROM commentaire where id_comm=:num Limit 1');
 $pdostat->bindValue(':num',$_GET["numcomm"], PDO::PARAM_INT);

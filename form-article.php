@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php include 'nav.php'; ?>
+<?php include 'admin.php'; ?>
 <?php
 $pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();
@@ -54,5 +54,6 @@ if (isset($_POST['titleart'])){
         </div>
         <a href="article.php"><input type="submit" class="btn" value="Inserer"></a>
     </form>
+    <a href="article.php"><input type="submit" class="btn" value="Voir les articles"></a>
 </fieldset>
 <?php include "footer.php"; ?>

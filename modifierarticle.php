@@ -1,6 +1,5 @@
 <?php require 'db.php'; ?>
-    <?php include "nav.php" ;
-    include 'sidebar.php'; ?>
+    <?php include "admin.php" ;?>
 <?php
 $pdostat= $bdd->prepare('SELECT * FROM article where id_article= :num ');
 $pdostat->bindValue(':num', $_GET['numar'], PDO::PARAM_INT);
@@ -15,7 +14,7 @@ $auteurs=$pdostat_aut->fetchAll();
 
 ?>
 <fieldset class=" w-100"> 
-        <legend>Remplir ce formulaire :</legend><?= $article['id_article'];?>
+        <legend>Remplir ce formulaire :</legend>
     <form action="modifierar.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <input type="hidden"  name="numar" value="<?= $article['id_article'];?>">
@@ -48,7 +47,7 @@ $auteurs=$pdostat_aut->fetchAll();
     <?php endforeach ;?>
 </select>
     </div>
-    <input type="submit" class="btn" value="enregistrer" name="update"></a>
+    <input type="submit" class="btn" value="enregistrer" name="update">
     </form>
     </fieldset>
     <?php include "footer.php" ; ?>

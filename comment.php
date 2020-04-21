@@ -1,5 +1,5 @@
 <?php require 'db.php'; ?>
-<?php include 'nav.php'; ?>
+<?php include 'admin.php'; ?>
 <?php
 $pdostat= $bdd->prepare('Select * FROM commentaire where id_article=:num ');
 $pdostat->bindValue(':num', $_GET["numar"], PDO::PARAM_INT);
