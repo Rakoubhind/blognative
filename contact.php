@@ -1,3 +1,36 @@
+<?php require 'db.php'; ?>
+<?php
+$pdostat = $bdd->prepare('Select * FROM contact  ');
+$executeISOk = $pdostat->execute();
+$s = $pdostat->fetchAll();
+
+?>
+<?php
+if(isset($_POST['submit']))
+     {
+         if($_POST['message'] == ""){
+            $error_msg['message']="the message is required";
+        }
+         if($_POST['name'] == ""){
+            $error_msg['name']="the name is required";
+         }
+         if($_POST['email']== ""){
+            $error_msg['email']="the email is required"; }
+        
+       
+        if($_POST['subject']== ""){
+            $error_msg['subject']="the subject is required";
+        }
+        else {
+            $req = $bdd->prepare("INSERT INTO contact SET message_contact = ?,name_contact = ?,email_contact = ?,subject_contact = ? ");
+            $req->execute([$_POST['message'], $_POST['name'], $_POST['email'], $_POST['subject']]);
+            header("location:contact.php");
+                exit();
+             
+        }
+      
+       }
+       ?>
 <!doctype html>
 <html lang="en">
 
@@ -20,6 +53,14 @@
     <link rel="stylesheet" href="css/search.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error{
+            color:#cc0000;
+            padding-top:5px ;
+            float:left;
+            width:100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,9 +92,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="admin.php">Admin</a>
-                                </li> -->
+                              <li class="nav-item">
+                                    <a class="nav-link" href="Admine.php">Admin</a>
+                                </li> 
                             </ul>
                         </div>
                         <div class="header_social_icon d-none d-lg-block">
@@ -105,38 +146,60 @@
           <h2 class="contact-title">Get in Touch</h2>
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate">
+          <form class="form-contact contact_form" action="" method="post" id="contactForm" enctype="multipart/form-data"
+            >
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-
-                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                
+                  <input class="form-control w-100" name="message" id="message" cols="30" rows="9"
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                    placeholder='Enter Message'></textarea>
+                    placeholder='Enter Message'> 
+                    <?php
+                    if(isset($error_msg['message'])){
+                        echo "<div class='error'>" .$error_msg['message']."</div>" ;
+                    }
+                  ?>
                 </div>
+               
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                    <?php
+                    if(isset($error_msg['name'])){
+                        echo "<div class='error'>" .$error_msg['name']."</div>" ;
+                    }
+                    ?>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'> 
+                    <?php
+                    if(isset($error_msg['email'])){
+                        echo "<div class='error'>" .$error_msg['email']."</div>" ;
+                    }
+                    ?>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
+                    <?php
+                    if(isset($error_msg['subject'])){
+                        echo "<div class='error'>" .$error_msg['subject']."</div>" ;
+                    }
+                    ?>
                 </div>
               </div>
             </div>
             <div class="load_btn">
-              <a href="#" class="btn_1">Send Message </a>
+              <!-- <a href="index.php" class="btn_1">Send Message </a> -->
+              <a href="index.php"><input type="submit"  name="submit" class="btn_1"  value="Send Message"></a>
             </div>
           </form>
         </div>

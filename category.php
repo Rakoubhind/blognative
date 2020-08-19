@@ -27,6 +27,7 @@ $s = $pdostat->fetchAll();
     <link rel="stylesheet" href="css/search.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
 
 <body>
@@ -57,6 +58,9 @@ $s = $pdostat->fetchAll();
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Admine.php">Admin</a>
                                 </li>
                             </ul>
                         </div>

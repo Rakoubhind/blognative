@@ -1,3 +1,17 @@
+<?php
+session_start();
+$name = $_SESSION['name'];
+//Check session is already set, otherwise redirect to login page
+if(empty($name)) {
+	header("Location:login.php");
+	exit;
+}
+// $welcome= "<h2 class='wel'>Welcome </h2>";
+
+print "<br>";
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,14 +31,24 @@
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <title>SB Admin 2 - Dashboard</title>
-
+  <style>
+        .error{
+            color:#cc0000;
+            padding-top:5px ;
+            float:left;
+            width:100%;
+        }
+    </style>
 </head>
 <body id="page-top">
-
+<!-- <a href="logout.php" class="btn btn-info btn-lg" style="float:right;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a> -->
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -47,7 +71,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span style="font-size:20px;">Dashboard</span></a>
+          <span style="font-size:20px;">Web Site</span></a>
       </li>
 
       <!-- Divider -->
@@ -88,3 +112,4 @@
       </div>
 
     </ul>
+ 

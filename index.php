@@ -1,8 +1,25 @@
-<?php require 'db.php'; ?>
+<?php require 'db.php';
+require_once "config.inc.php";
+?>
+
 <?php
-$pdostat = $bdd->prepare('Select * FROM article   ');
+$pdostat = $bdd->prepare('Select * FROM article ');
 $executeISOk = $pdostat->execute();
+// $user = $sth->fetch(PDO::FETCH_OBJ);
 $s = $pdostat->fetchAll();
+$sth = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+$sth->bindParam(':email', $email, PDO::PARAM_STR);
+$sth->execute();
+$user = $sth->fetch(PDO::FETCH_OBJ);
+if(!empty($user)) {
+    $a = "<a class='nav-link' href='login.php' name='admin'style='color:#C00417;'>Admin</a>" ; 
+
+   
+    }
+    else {
+    $a = "<a class='nav-link' href='Admine.php' name='admin'style='color:#C00417;'>Admin</a>" ; 
+        
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -74,9 +91,12 @@ $s = $pdostat->fetchAll();
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php" style="color:#C00417;">Contact</a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="admin.php" style="color:#C00417;">Admin</a>
-                                </li> -->
+                                <li class="nav-item">
+                                    <?php
+                               
+                                  print  $a;
+        ?>
+                                </li>
                                 
                             </ul>
                         </div>

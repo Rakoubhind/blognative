@@ -22,21 +22,26 @@ if (isset($_POST['nom-cat'])) {
 }
 ?>
 <fieldset class=" w-100">
-    <legend>Remplir ce formulaire :</legend>
+    <legend>Remplir ce formulaire : <a href="logout.php" class="btn btn-info btn-lg" style="float:right;padding-top:10px;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a></legend>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="dd"> <span> Name Categorie :<span class="required">*</span></span></label> <input type="text" class="form-control1" name="nom-cat">
+        <label for="formGroupExampleInput" style="color:blue;font-size:18px">
+    Name Categories :</label> <input type="text" class="form-control" id="formGroupExampleInput"name="nom-cat">
         </div>
         <br>
         <div class="form-group">
-            <label for="dd"><span>Image :<span class="required">*</span></span></label> <input type="file" class="form-control2" name="imagecat">
+        <label for="formGroupExampleInput" style="color:blue;font-size:18px">
+  Image :</label>
+        <input type="file" class="form-control2" name="imagecat">
         </div>
         <br>
         <br>
-        <a href="categorie.php"><input type="submit" class="btn" value="Inserer"></a>
+        <a href="categorie.php"><input type="submit" class="btn" value="Inserer" style="width:100px;font-size:20px;"></a>
         
     </form>
-    <a href="categorie.php"><input type="submit" class="btn" value="Voir les Categories"></a>
+    <a href="categorie.php"><input type="submit" class="btn"  value="Voir les Categories" style="width:200px;font-size:20px;"></a>
 </fieldset>
 
 <?php include "footer.php"; ?>
